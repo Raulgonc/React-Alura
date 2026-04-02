@@ -1,0 +1,15 @@
+.hero {
+  width: 100%;
+  height: 600px;
+  background: linear-gradient(to bottom, #17DCB3, #06151A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 1124px;
+  height: 589px;
+  object-fit: cover;
+}
