@@ -1,4 +1,94 @@
 body {
   margin: 0;
   background-color: #06151A;
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* Headings - Orbitron */
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4.750rem;
+  line-height: 125%;
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.812rem;
+  line-height: 125%;
+}
+
+h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.062rem;
+  line-height: 125%;
+}
+
+h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.438rem;
+  line-height: 125%;
+}
+
+h5 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.938rem;
+  line-height: 125%;
+}
+
+h6 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.562rem;
+  line-height: 125%;
+}
+
+/* Cores */
+:root {
+  /* Neutras */
+  --color-bg: #06151A;
+  --color-grafite: #212121;
+  --color-cinza-medio: #33353F;
+  --color-branco: #FFFFFF;
+
+  /* Primárias */
+  --color-verde: #17D9B1;
+
+  /* Gradiente */
+  --gradient-banner: linear-gradient(to bottom, #17D9B1, #06151A);
+
+  /* Bordas */
+  --border-radius-tag: 4px;
+  --border-radius: 8px;
+
+  /* Espaçamento */
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-md: 24px;
+  --spacing-l: 40px;
+  --spacing-xl: 80px;
+}
+
+/* Body - Work Sans */
+.text-xl {
+  font-size: 1.562rem;
+  line-height: 120%;
+}
+
+.text-l {
+  font-size: 1.250rem;
+  line-height: 120%;
+}
+
+.text-md {
+  font-size: 1.000rem;
+  line-height: 120%;
+}
+
+.text-s {
+  font-size: 0.812rem;
+  line-height: 120%;
+}
+
+.text-xs {
+  font-size: 0.625rem;
+  line-height: 120%;
 }
