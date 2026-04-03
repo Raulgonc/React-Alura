@@ -1,0 +1,70 @@
+.formulario {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-xl) 0;
+}
+
+.form {
+  width: 384px;
+  height: 406px;
+  background-color: var(--color-grafite);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  box-sizing: border-box;
+}
+
+.titulo {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--color-branco);
+  margin: 0;
+  line-height: 125%;
+  text-align: center;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.campo label {
+  font-size: 0.812rem;
+  color: var(--color-branco);
+}
+
+.campo input {
+  background-color: var(--color-cinza-medio);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0 var(--spacing-s);
+  color: var(--color-branco);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.812rem;
+  outline: none;
+  box-sizing: border-box;
+  width: 328px;
+  height: 31px;
+}
+
+.campo input::placeholder {
+  color: #6b7280;
+}
+
+.form button {
+  background-color: var(--color-verde);
+  color: var(--color-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 128px;
+  height: 35px;
+  margin-top: auto;
+  align-self: center;
+}
