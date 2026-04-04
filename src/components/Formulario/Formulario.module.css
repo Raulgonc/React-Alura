@@ -69,14 +69,23 @@
   resize: none;
 }
 
-.campo input[type='file'] {
-  background: none;
-  padding: 0;
+.inputFileEscondido {
+  display: none;
+}
+
+.inputFile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 328px;
+  height: 31px;
+  background-color: var(--color-cinza-medio);
+  border-radius: var(--border-radius);
   color: var(--color-branco);
   font-family: 'Work Sans', sans-serif;
   font-size: 0.812rem;
-  width: 328px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .campo select {

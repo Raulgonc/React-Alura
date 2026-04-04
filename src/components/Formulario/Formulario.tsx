@@ -83,11 +83,15 @@ const Formulario = ({ onAdicionarEvento }: FormularioProps) => {
 
         <div className={styles.campo}>
           <label htmlFor="imagemEvento">Imagem do evento</label>
+          <label htmlFor="imagemEvento" className={styles.inputFile}>
+            {imagem ? 'Imagem selecionada' : 'Escolher imagem'}
+          </label>
           <input
             type="file"
             id="imagemEvento"
             accept="image/*"
             onChange={handleImagem}
+            className={styles.inputFileEscondido}
           />
         </div>
 
