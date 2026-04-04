@@ -14,7 +14,7 @@ const Formulario = ({ onAdicionarEvento }: FormularioProps) => {
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
     if (!nome || !data || !tema) return
-    onAdicionarEvento({ id: Date.now(), nome, data, tema, descricao: '' })
+    onAdicionarEvento({ id: Date.now(), nome, data, tema, descricao: '', imagem: '' })
     setNome('')
     setData('')
     setTema('')

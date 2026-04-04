@@ -4,4 +4,5 @@ export interface Evento {
   data: string
   tema: string
   descricao: string
+  imagem: string
 }

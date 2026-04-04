@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: var(--spacing-xl);
   padding: var(--spacing-xl) var(--spacing-md);
+  padding-bottom: calc(var(--spacing-xl) * 2);
 }
 
 .secao h2 {
@@ -10,10 +11,11 @@
   margin: 0 0 var(--spacing-md);
   font-size: 1.25rem;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-md);
+  gap: var(--spacing-l);
 }

@@ -11,7 +11,7 @@
 .imagem {
   width: 282px;
   height: 237px;
-  background-color: var(--color-cinza-medio);
+  object-fit: cover;
   flex-shrink: 0;
 }
 
