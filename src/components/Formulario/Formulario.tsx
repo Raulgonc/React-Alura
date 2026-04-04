@@ -10,14 +10,23 @@ const Formulario = ({ onAdicionarEvento }: FormularioProps) => {
   const [nome, setNome] = useState('')
   const [data, setData] = useState('')
   const [tema, setTema] = useState('')
+  const [descricao, setDescricao] = useState('')
+  const [imagem, setImagem] = useState('')
+
+  const handleImagem = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) setImagem(URL.createObjectURL(file))
+  }
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
     if (!nome || !data || !tema) return
-    onAdicionarEvento({ id: Date.now(), nome, data, tema, descricao: '', imagem: '' })
+    onAdicionarEvento({ id: Date.now(), nome, data, tema, descricao, imagem })
     setNome('')
     setData('')
     setTema('')
+    setDescricao('')
+    setImagem('')
   }
 
   return (
@@ -60,6 +69,26 @@ const Formulario = ({ onAdicionarEvento }: FormularioProps) => {
             <option value="ia">Inteligência Artificial</option>
             <option value="seguranca">Segurança Digital</option>
           </select>
+        </div>
+
+        <div className={styles.campo}>
+          <label htmlFor="descricaoEvento">Descrição do evento</label>
+          <textarea
+            id="descricaoEvento"
+            placeholder="Descreva o evento..."
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+          />
+        </div>
+
+        <div className={styles.campo}>
+          <label htmlFor="imagemEvento">Imagem do evento</label>
+          <input
+            type="file"
+            id="imagemEvento"
+            accept="image/*"
+            onChange={handleImagem}
+          />
         </div>
 
         <button type="submit">Criar evento</button>

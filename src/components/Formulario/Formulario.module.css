@@ -6,7 +6,6 @@
 
 .form {
   width: 384px;
-  height: 406px;
   background-color: var(--color-grafite);
   border-radius: var(--border-radius);
   padding: var(--spacing-md);
@@ -50,8 +49,34 @@
   height: 31px;
 }
 
-.campo input::placeholder {
+.campo input::placeholder,
+.campo textarea::placeholder {
   color: #6b7280;
+}
+
+.campo textarea {
+  background-color: var(--color-cinza-medio);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 8px var(--spacing-s);
+  color: var(--color-branco);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.812rem;
+  outline: none;
+  box-sizing: border-box;
+  width: 328px;
+  height: 80px;
+  resize: none;
+}
+
+.campo input[type='file'] {
+  background: none;
+  padding: 0;
+  color: var(--color-branco);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.812rem;
+  width: 328px;
+  cursor: pointer;
 }
 
 .campo select {
@@ -80,6 +105,6 @@
   cursor: pointer;
   width: 128px;
   height: 35px;
-  margin-top: 32px;
+  margin-top: auto;
   align-self: center;
 }
