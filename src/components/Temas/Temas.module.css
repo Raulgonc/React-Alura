@@ -1,8 +1,8 @@
 .temas {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-xl) var(--spacing-md);
+  gap: 64px;
+  padding: var(--spacing-xl) 360px;
   padding-bottom: calc(var(--spacing-xl) * 2);
 }
 
@@ -10,7 +10,8 @@
   color: var(--color-branco);
   margin: 0 0 var(--spacing-md);
   font-size: 1.25rem;
-  text-align: center;
+  font-weight: 400;
+  text-align: left;
   text-transform: capitalize;
 }
 
