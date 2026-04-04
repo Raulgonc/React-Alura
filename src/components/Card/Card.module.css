@@ -58,4 +58,8 @@
   font-size: 16px;
   color: var(--color-branco);
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

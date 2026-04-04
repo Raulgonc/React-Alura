@@ -77,8 +77,10 @@ const Formulario = ({ onAdicionarEvento }: FormularioProps) => {
             id="descricaoEvento"
             placeholder="Descreva o evento..."
             value={descricao}
+            maxLength={500}
             onChange={(e) => setDescricao(e.target.value)}
           />
+          <span className={styles.contador}>{descricao.length}/500</span>
         </div>
 
         <div className={styles.campo}>

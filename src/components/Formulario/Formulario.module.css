@@ -69,6 +69,14 @@
   resize: none;
 }
 
+.contador {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.625rem;
+  color: #6b7280;
+  text-align: right;
+  width: 328px;
+}
+
 .inputFileEscondido {
   display: none;
 }
