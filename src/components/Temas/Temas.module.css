@@ -11,3 +11,9 @@
   font-size: 1.25rem;
   text-align: center;
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
