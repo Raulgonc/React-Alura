@@ -54,6 +54,21 @@
   color: #6b7280;
 }
 
+.campo select {
+  background-color: var(--color-cinza-medio);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0 var(--spacing-s);
+  color: var(--color-branco);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.812rem;
+  outline: none;
+  box-sizing: border-box;
+  width: 328px;
+  height: 31px;
+  cursor: pointer;
+}
+
 .form button {
   background-color: var(--color-verde);
   color: var(--color-bg);
@@ -65,6 +80,6 @@
   cursor: pointer;
   width: 128px;
   height: 35px;
-  margin-top: auto;
+  margin-top: 32px;
   align-self: center;
 }

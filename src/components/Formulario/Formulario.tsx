@@ -8,7 +8,7 @@ const Formulario = () => {
 
         <div className={styles.campo}>
           <label htmlFor="nomeEvento">Qual o nome do evento</label>
-          <input type="text" id="nomeEvento" placeholder="Digite o nome do evento" />
+          <input type="text" id="nomeEvento" placeholder="Summer Eletro Devs" />
         </div>
 
         <div className={styles.campo}>
@@ -18,7 +18,14 @@ const Formulario = () => {
 
         <div className={styles.campo}>
           <label htmlFor="temaEvento">Tema do evento</label>
-          <input type="text" id="temaEvento" placeholder="Digite o tema do evento" />
+          <select id="temaEvento">
+            <option value="">Selecione um tema</option>
+            <option value="tecnologia">Tecnologia</option>
+            <option value="design">Design</option>
+            <option value="programacao">Programação</option>
+            <option value="ia">Inteligência Artificial</option>
+            <option value="seguranca">Segurança Digital</option>
+          </select>
         </div>
 
         <button type="submit">Criar evento</button>
