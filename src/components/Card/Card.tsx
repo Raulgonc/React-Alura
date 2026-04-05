@@ -3,22 +3,40 @@ import temas from '../../temas'
 import styles from './Card.module.css'
 
 interface CardProps {
-  evento: Evento
+  evento: Evento // Objeto com todos os dados do evento a ser exibido
 }
 
+// Componente visual que representa um evento publicado.
+// Recebe um Evento e aplica formatações antes de exibir.
 const Card = ({ evento }: CardProps) => {
+  // Busca o tema correspondente no array de temas para obter o texto da tag formatado.
+  // Ex: id 'ia' → tag 'I.A.' em vez de exibir o id bruto.
   const tema = temas.find((t) => t.id === evento.tema)
+
+  // Converte a data do formato ISO (YYYY-MM-DD) para o padrão brasileiro (DD/MM/AA).
+  // Ex: '2025-05-10' → '10/05/25'
   const [ano, mes, dia] = evento.data.split('-')
   const dataFormatada = `${dia}/${mes}/${ano.slice(2)}`
 
   return (
     <div className={styles.card}>
+      {/* Imagem do evento — ocupa toda a largura do card (282x237) */}
       <img src={evento.imagem} alt={evento.nome} className={styles.imagem} />
 
+      {/* Área de texto com padding lateral e vertical */}
       <div className={styles.conteudo}>
+
+        {/* Badge do tema — usa tag formatada ou fallback para o id do tema */}
         <span className={styles.tag}>{tema?.tag ?? evento.tema}</span>
+
+        {/* Data formatada no padrão brasileiro */}
         <p className={styles.data}>{dataFormatada}</p>
+
+        {/* Título do evento em Orbitron 25px */}
         <h3 className={styles.titulo}>{evento.nome}</h3>
+
+        {/* Descrição truncada a 3 linhas via CSS line-clamp.
+            O texto completo (até 500 chars) existe no estado — um popup futuro o exibirá. */}
         <p className={styles.descricao}>{evento.descricao}</p>
       </div>
     </div>
