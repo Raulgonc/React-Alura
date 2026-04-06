@@ -3,12 +3,13 @@ import temas from '../../temas'
 import styles from './Card.module.css'
 
 interface CardProps {
-  evento: Evento // Objeto com todos os dados do evento a ser exibido
+  evento: Evento                // Objeto com todos os dados do evento a ser exibido
+  onClick: (evento: Evento) => void // Callback disparado ao clicar no card — abre o modal
 }
 
 // Componente visual que representa um evento publicado.
-// Recebe um Evento e aplica formatações antes de exibir.
-const Card = ({ evento }: CardProps) => {
+// Recebe um Evento, aplica formatações e abre o modal ao ser clicado.
+const Card = ({ evento, onClick }: CardProps) => {
   // Busca o tema correspondente no array de temas para obter o texto da tag formatado.
   // Ex: id 'ia' → tag 'I.A.' em vez de exibir o id bruto.
   const tema = temas.find((t) => t.id === evento.tema)
@@ -19,7 +20,9 @@ const Card = ({ evento }: CardProps) => {
   const dataFormatada = `${dia}/${mes}/${ano.slice(2)}`
 
   return (
-    <div className={styles.card}>
+    // Ao clicar no card, dispara onClick passando o evento completo para o App abrir o modal
+    <div className={styles.card} onClick={() => onClick(evento)}>
+
       {/* Imagem do evento — ocupa toda a largura do card (282x237) */}
       <img src={evento.imagem} alt={evento.nome} className={styles.imagem} />
 
@@ -36,7 +39,7 @@ const Card = ({ evento }: CardProps) => {
         <h3 className={styles.titulo}>{evento.nome}</h3>
 
         {/* Descrição truncada a 3 linhas via CSS line-clamp.
-            O texto completo (até 500 chars) existe no estado — um popup futuro o exibirá. */}
+            O texto completo é exibido no modal ao clicar no card. */}
         <p className={styles.descricao}>{evento.descricao}</p>
       </div>
     </div>

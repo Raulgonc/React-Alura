@@ -4,12 +4,13 @@ import Card from '../Card/Card'
 import styles from './Temas.module.css'
 
 interface TemasProps {
-  eventos: Evento[] // Lista completa de eventos vinda do App
+  eventos: Evento[]                         // Lista completa de eventos vinda do App
+  onCardClick: (evento: Evento) => void     // Callback repassado ao Card para abrir o modal
 }
 
 // Renderiza uma seção para cada tema cadastrado em temas.ts.
 // Para cada tema, filtra os eventos correspondentes e exibe seus Cards.
-const Temas = ({ eventos }: TemasProps) => {
+const Temas = ({ eventos, onCardClick }: TemasProps) => {
   return (
     <div className={styles.temas}>
       {temas.map((tema) => {
@@ -24,7 +25,8 @@ const Temas = ({ eventos }: TemasProps) => {
             {/* Grade de cards — só renderiza se houver eventos no tema */}
             <div className={styles.cards}>
               {eventosTema.map((evento) => (
-                <Card key={evento.id} evento={evento} />
+                // Repassa o callback onCardClick para cada Card
+                <Card key={evento.id} evento={evento} onClick={onCardClick} />
               ))}
             </div>
           </section>

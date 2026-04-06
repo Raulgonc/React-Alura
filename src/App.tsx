@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import Formulario from './components/Formulario/Formulario'
 import Temas from './components/Temas/Temas'
+import Modal from './components/Modal/Modal'
 import { Evento } from './types/Evento'
 
 // Importação das imagens de exemplo para popular os cards durante o desenvolvimento
@@ -32,6 +33,10 @@ function App() {
   // Inicializado com os eventos mock para visualização em desenvolvimento.
   const [eventos, setEventos] = useState<Evento[]>(eventosMock)
 
+  // Armazena o evento cujo modal está aberto.
+  // null = nenhum modal aberto | Evento = modal visível com os detalhes desse evento.
+  const [eventoSelecionado, setEventoSelecionado] = useState<Evento | null>(null)
+
   // Função passada ao Formulário via prop.
   // Adiciona o novo evento ao final da lista usando spread para não mutar o estado anterior.
   const adicionarEvento = (evento: Evento) => {
@@ -49,8 +54,18 @@ function App() {
       {/* Formulário que coleta dados e dispara adicionarEvento ao submeter */}
       <Formulario onAdicionarEvento={adicionarEvento} />
 
-      {/* Renderiza as seções por tema, filtrando e exibindo os eventos correspondentes */}
-      <Temas eventos={eventos} />
+      {/* Renderiza as seções por tema, filtrando e exibindo os eventos correspondentes.
+          onCardClick recebe o evento clicado e o define como eventoSelecionado, abrindo o modal. */}
+      <Temas eventos={eventos} onCardClick={setEventoSelecionado} />
+
+      {/* Modal renderizado apenas quando há um evento selecionado.
+          onFechar reseta eventoSelecionado para null, fechando o modal. */}
+      {eventoSelecionado && (
+        <Modal
+          evento={eventoSelecionado}
+          onFechar={() => setEventoSelecionado(null)}
+        />
+      )}
     </>
   )
 }
