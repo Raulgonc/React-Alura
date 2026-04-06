@@ -1,16 +1,51 @@
-# React + Vite
+# React Alura — Blog de Tecnologia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de estudos desenvolvido com React durante o curso da Alura, onde construo um blog de tecnologia. A aplicação explora conceitos fundamentais do React como componentes, props, estado e roteamento, aplicando-os na prática através de uma interface moderna para publicação e leitura de artigos tech.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologias
 
-## React Compiler
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/)
+- CSS Modules
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Criação de eventos via formulário com nome, data, tema, descrição e imagem
+- Organização dos eventos em seções por tema
+- Modal de detalhes ao clicar em um card
+- Fontes customizadas: **Orbitron** (títulos) e **Work Sans** (corpo)
+- Design tokens globais para cores, espaçamentos e bordas
+
+---
+
+## Estrutura de Componentes
+
+```
+src/
+├── components/
+│   ├── Header/       # Barra superior com logo
+│   ├── Hero/         # Banner principal com degradê
+│   ├── Formulario/   # Formulário de criação de eventos
+│   ├── Temas/        # Seções de eventos organizadas por tema
+│   ├── Card/         # Card individual de evento
+│   └── Modal/        # Popup de detalhes do evento
+├── types/
+│   └── Evento.ts     # Interface TypeScript do evento
+└── temas.ts          # Array central de temas disponíveis
+```
+
+---
+
+## Como rodar
+
+```bash
+npm install
+npm run dev
+```
+
+Acesse em `http://localhost:5173`
